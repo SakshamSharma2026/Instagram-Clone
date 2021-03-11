@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostImages.FinalPostActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:elevation="0dp"
+        android:id="@+id/appbar"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:elevation="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:background="?android:attr/windowBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/close"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_baseline_close_24"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NEW POST"
+                    android:textSize="18sp"
+                    android:layout_toStartOf="@id/continuee"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/bold"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:layout_toEndOf="@id/close"
+                    />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/continuee"
+                    android:layout_marginEnd="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/rightarrow"
+                    />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/appbar"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/img"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/textcaption"
+                android:layout_margin="5dp"
+                android:textColor="@color/black"
+                android:hint="Write a caption..."
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:id="@+id/textlocation"
+                android:layout_margin="5dp"
+                android:textColor="@color/black"
+                android:hint="Location"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/rll"
+    android:background="@android:color/transparent"
+    android:layout_height="wrap_content"
+>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:isScrollContainer="false"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_gravity="center"
+                    android:layout_height="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/gray2"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="New Highlight"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/medium"
+                    android:textColor="@color/black"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/gray2"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/button_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:civ_border_width="1dp"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    app:civ_border_color="#79808080"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:hint="Highlights"
+                    android:id="@+id/addtext"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Add"
+                    android:id="@+id/btnAdd"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/medium"
+                    android:textColor="@color/white"
+                    android:background="@color/blue"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

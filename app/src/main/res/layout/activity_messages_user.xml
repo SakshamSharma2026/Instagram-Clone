@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SendMessages.MessageUser.MessagesUserActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:elevation="0dp"
+        android:id="@+id/appbar"
+        app:elevation="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:background="?android:attr/windowBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/backbtn"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_baseline_keyboard_backspace_24"
+                    />
+
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chats"
+                    android:layout_toEndOf="@id/backbtn"
+                    android:textSize="20sp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/bold"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/searchBar"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/appbar"
+        android:layout_centerHorizontal="true"
+        layout="@layout/uigitdev_elements_search_bar_type_item_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:id="@+id/messageuser_recycler"
+        android:layout_below="@id/searchBar"
+        android:overScrollMode="never"
+        android:layout_marginTop="10dp"
+        />
+
+</RelativeLayout>

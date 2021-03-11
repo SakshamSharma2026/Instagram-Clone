@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingBottom="10dp"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/rr"
+            android:layout_margin="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button_head_card_parent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:id="@+id/button_click_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/button_body_card_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"
+                    app:cardBackgroundColor="#ffffff"
+                    android:layout_centerInParent="true"
+                    app:cardCornerRadius="39dp"
+                    app:cardElevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/button_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:civ_border_width="1dp"
+                            android:layout_centerInParent="true"
+                            app:civ_border_color="#79808080"/>
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@id/more"
+            android:layout_toEndOf="@+id/button_head_card_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:textColor="@color/black"
+                android:fontFamily="@font/medium"
+                android:textSize="14sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:id="@+id/location"
+                android:fontFamily="@font/light"
+                android:textSize="12sp"
+                />
+        </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/more"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_baseline_more_vert_24"
+                />
+
+
+    </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:elevation="3dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/rr"
+            android:background="#28808080"
+            />
+
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/ll"
+            app:cardElevation="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/rr"
+            android:layout_height="400dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:id="@+id/heartLayoutt"
+                android:gravity="center"
+                android:background="@color/white"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/postimg"
+                    />
+
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/likeheart"
+                    android:visibility="gone"
+                    android:src="@drawable/avd_instgram_like"
+                    />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/ll2"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/ll">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/heartLayout"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/image_heart_red"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/redheart"
+                    android:visibility="invisible"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/image_heart"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/heart"
+                    android:visibility="visible"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/speech_bubble"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/heartLayout"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/messagecircle"
+                android:visibility="visible"
+                android:layout_centerVertical="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/send_bubble"
+                android:layout_toRightOf="@+id/speech_bubble"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/send"
+                android:visibility="visible"
+                android:layout_centerVertical="true"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/bookmark" />
+
+        </RelativeLayout>
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/ll"-->
+<!--            android:padding="10dp"-->
+<!--            android:id="@+id/ll2"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginTop="5dp">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/btn_redlike"            -->
+<!--                android:visibility="gone"-->
+
+
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:src="@drawable/redheart"-->
+<!--                />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/btn_whitelike"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:src="@drawable/heart"-->
+<!--                />-->
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/btn_comment"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_marginLeft="35dp"-->
+<!--                android:src="@drawable/messagecircle"-->
+<!--                />-->
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/btn_send"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_marginLeft="70dp"-->
+<!--                android:src="@drawable/send"-->
+<!--                />-->
+
+<!--        </RelativeLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll2"
+            android:id="@+id/likelayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="25dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/likescount"
+                android:textColor="@color/black"
+                android:fontFamily="@font/medium"
+                android:textSize="14sp"
+                />
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_below="@id/likelayout"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/captionlayout"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/username2"
+                android:ellipsize="end"
+                android:fontFamily="@font/medium"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/username2"
+                android:id="@+id/text_caption"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/captionlayout"
+            android:id="@+id/commentlayout"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/commentscount"
+                android:padding="3dp"
+                android:text="View all 4 comments"
+                android:textColor="#BF808080"
+                android:fontFamily="@font/medium"
+                android:textSize="14sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/uploaddate"
+                android:padding="3dp"
+                android:textColor="#D8808080"
+                android:textSize="10sp"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

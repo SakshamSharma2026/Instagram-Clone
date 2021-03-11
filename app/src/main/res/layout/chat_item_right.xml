@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content">
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/button_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:layout_toStartOf="@+id/li"
+            android:layout_centerVertical="true" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            app:cardElevation="0dp"
+            android:visibility="gone"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="5dp"
+            android:layout_alignParentTop="true"
+            android:id="@+id/card_image"
+            app:cardCornerRadius="20dp"
+            android:layout_height="200dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:id="@+id/msg_img"
+                    android:scaleType="centerCrop"
+                    android:transitionName="Image"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/li"
+            android:background="@drawable/uigitdev_elements_chat_3_border"
+            android:backgroundTint="@color/blue"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text"
+                android:textSize="16sp"
+                android:text="saksham sharma"
+                android:fontFamily="@font/light"
+                android:textColor="@color/white"
+                android:padding="8dp"
+                />
+        </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_seen"
+                android:text="Delib=vered"
+                android:layout_below="@id/li"
+                android:layout_alignParentEnd="true"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/medium"
+                android:textColor="#9F808080"
+                />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

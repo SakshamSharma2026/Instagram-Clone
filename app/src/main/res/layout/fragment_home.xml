@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:elevation="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            app:elevation="0dp"
+            android:id="@+id/appbar"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:elevation="0dp"
+                app:elevation="5dp"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/windowBackground">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:layout_height="60dp">
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:scaleType="centerCrop"
+                        android:layout_alignParentStart="true"
+                        android:src="@drawable/instagram"
+                        />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/messagebtn"
+                        android:layout_marginEnd="5dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/send"
+                        />
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/appbar"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="gone"
+            android:id="@+id/linearLayout"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome to Instagram"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:fontFamily="@font/medium"
+                android:padding="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Follow people to start seeing the photos and videos they share."
+                android:textColor="#F8808080"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+
+
+            <com.yarolegovich.discretescrollview.DiscreteScrollView
+                android:id="@+id/picker"
+                android:layout_width="match_parent"
+                android:overScrollMode="never"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/scrollView"
+            android:visibility="gone"
+            android:overScrollMode="never"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/appbar"
+            android:scrollbars="none">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:id="@+id/nestedscroll"
+                    android:overScrollMode="never"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:overScrollMode="never"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/mystoryrecycler"
+                            />
+
+                    </RelativeLayout>
+                </androidx.core.widget.NestedScrollView>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/nestedscroll"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/gray"/>
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recycler"
+                    android:overScrollMode="never"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/nestedscroll"
+                    />
+            </RelativeLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>

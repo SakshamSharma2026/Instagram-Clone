@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FollowUser.FollowUserActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:elevation="0dp"
+        android:id="@+id/appbar"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:elevation="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:background="?android:attr/windowBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/close"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_baseline_keyboard_backspace_24"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:id="@+id/username"
+                    android:textSize="18sp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/bold"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:layout_toEndOf="@id/close"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar"
+        android:layout_centerInParent="true"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include
+                android:id="@+id/profileItem"
+                layout="@layout/uigitdev_elements_pe_profile_card_5"
+                android:layout_width="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/userlayout"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/profileItem"
+                android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/highlights_view"
+                    android:layout_marginTop="5dp"
+                    android:overScrollMode="never"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/grid_view"
+                    android:layout_marginTop="10dp"
+                    android:overScrollMode="never"
+                    />
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_below="@id/userlayout"
+                android:orientation="vertical"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content">
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/privatelayout"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:id="@+id/view"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/gray3"
+                        />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_below="@id/view"
+                        android:padding="15dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:id="@+id/im"
+                            android:padding="2dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="5dp"
+                            android:src="@drawable/lockicon"
+                            />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/im"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="This Account is Private"
+                                android:padding="5dp"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/bold"
+                                />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="5dp"
+                                android:lines="2"
+                                android:textStyle="normal"
+                                android:ellipsize="end"
+                                android:text="Follow this account to see their photos and videos."
+                                android:textColor="#C3808080"
+                                android:textSize="12sp"
+
+                                />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

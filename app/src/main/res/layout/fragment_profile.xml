@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.ProfileFragment">
+
+
+
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:indeterminate="true"
+        android:id="@+id/progress_bar"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"/>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:id="@+id/profilelayout"
+    android:visibility="gone"
+    android:layout_height="wrap_content">
+
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:id="@+id/appbar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textSize="22sp"
+                    android:id="@+id/idusername"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bold"
+                    />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/idusername"
+                    android:src="@drawable/verified"
+                    />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/design_navigation_view"
+                    android:padding="3dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_baseline_menu_24"
+                    />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/profileItem"
+                layout="@layout/uigitdev_elements_pe_profile_card_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/profileItem"
+                android:id="@+id/highlights_view"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_centerHorizontal="true"
+                android:overScrollMode="never"
+                android:layout_below="@id/highlights_view"
+                android:id="@+id/grid_view"
+                />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+
+</FrameLayout>

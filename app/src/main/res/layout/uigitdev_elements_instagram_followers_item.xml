@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_parent"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:cardBackgroundColor="#ffffff"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:id="@+id/item_click_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+
+            <RelativeLayout
+                android:id="@+id/item_content_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/item_follow_button_card_parent"
+                android:layout_toEndOf="@+id/item_image_card_parent"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/item_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="#131313"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/item_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/item_text"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:textColor="#787878"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/item_follow_button_card_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/item_delete_button_card_parent"
+                android:minWidth="70dp"
+                android:layout_marginEnd="5dp"
+                app:cardBackgroundColor="#3796F0"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:id="@+id/item_follow_button_click_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/item_button_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:paddingLeft="13dp"
+                        android:paddingRight="13dp"
+                        android:text="Confirm"
+                        android:textColor="#ffffff"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/item_delete_button_card_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:minWidth="70dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="0dp">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/uigitdev_elements_input_field_border"
+                    android:layout_height="match_parent">
+                    <RelativeLayout
+                        android:id="@+id/item_delete_button_click_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/item_button_text2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:ellipsize="end"
+                            android:lines="1"
+                            android:paddingLeft="13dp"
+                            android:paddingRight="13dp"
+                            android:text="Delete"
+                            android:textColor="#000000"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+                </FrameLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/item_image_card_parent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                app:cardBackgroundColor="#ececec"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/item_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/navhome"
+        android:icon="@drawable/homeselector"
+        android:title=""/>
+
+    <item android:id="@+id/navsearch"
+        android:icon="@drawable/searchselector"
+        android:title=""/>
+
+    <item android:id="@+id/navuplod"
+        android:icon="@drawable/upload"
+        android:title=""/>
+
+    <item android:id="@+id/navlike"
+        android:icon="@drawable/likeselector"
+        android:title=""/>
+
+    <item android:id="@+id/navprofile"
+        android:icon="@drawable/profileselector"
+        android:title=""/>
+
+</menu>

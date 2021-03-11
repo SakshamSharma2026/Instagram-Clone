@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.NotificationFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/profilelayout"
+        android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:id="@+id/appbar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textSize="20sp"
+                    android:text="Activity"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bold"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/appbar"
+            android:id="@+id/scrollView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:scrollbars="none">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:id="@+id/follownotification_recycler"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:overScrollMode="never"
+                    android:layout_below="@id/follownotification_recycler"
+                    android:id="@+id/notification_recycler"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:overScrollMode="never"
+                    android:layout_below="@id/notification_recycler"
+                    android:id="@+id/notification_comment_recycler"
+                    />
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_below="@id/appbar"
+            android:id="@+id/notilayout"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="15dp"
+
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/circleheart"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textSize="20sp"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:text="Activity On Your Posts"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:textSize="14sp"
+                    android:padding="5dp"
+                    android:textStyle="normal"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="When someone likes or comments on one of your posts,you'll see it here."
+                    android:textColor="#DC808080"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</FrameLayout>
