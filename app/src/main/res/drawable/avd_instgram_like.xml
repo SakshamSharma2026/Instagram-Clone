@@ -1,6 +1,7 @@
 <animated-vector xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aapt="http://schemas.android.com/aapt">
+    xmlns:aapt="http://schemas.android.com/aapt"
+    tools:targetApi="lollipop">
     <aapt:attr name="android:drawable">
         <vector
             android:name="vector"
@@ -25,21 +26,21 @@
             <set>
                 <objectAnimator
                     android:propertyName="scaleX"
-                    android:duration="500"
+                    android:duration="400"
                     android:valueFrom="0"
                     android:valueTo="0.85"
                     android:valueType="floatType"
                     android:interpolator="@android:anim/overshoot_interpolator"/>
                 <objectAnimator
                     android:propertyName="scaleY"
-                    android:duration="500"
+                    android:duration="400"
                     android:valueFrom="0"
                     android:valueTo="0.85"
                     android:valueType="floatType"
                     android:interpolator="@android:anim/overshoot_interpolator"/>
                 <objectAnimator
                     android:propertyName="scaleX"
-                    android:startOffset="700"
+                    android:startOffset="600"
                     android:duration="200"
                     android:valueFrom="0.85"
                     android:valueTo="0"
@@ -47,7 +48,7 @@
                     android:interpolator="@android:anim/accelerate_interpolator"/>
                 <objectAnimator
                     android:propertyName="scaleY"
-                    android:startOffset="700"
+                    android:startOffset="600"
                     android:duration="200"
                     android:valueFrom="0.85"
                     android:valueTo="0"
@@ -61,7 +62,7 @@
             <set>
                 <objectAnimator
                     android:propertyName="fillAlpha"
-                    android:duration="60"
+                    android:duration="5"
                     android:valueFrom="0"
                     android:valueTo="1"
                     android:valueType="floatType"
@@ -69,7 +70,7 @@
                 <objectAnimator
                     android:propertyName="fillAlpha"
                     android:startOffset="750"
-                    android:duration="60"
+                    android:duration="5"
                     android:valueFrom="1"
                     android:valueTo="0"
                     android:valueType="floatType"

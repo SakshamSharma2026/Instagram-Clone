@@ -14,9 +14,7 @@ public class AppSharedPreferences {
     private static final String username="username";
     private  static  final  String imgUrl ="imgUrl";
     private  static  final  String status ="status";
-    private  static  final  String followersCount ="followersCount";
-    private  static  final  String followingsCount ="FollowingsCount";
-    private  static  final  String notificationImgUrl ="notificationImgUrl";
+
 
     public AppSharedPreferences(Context context) {
         String Pref_Name = "Login_ID";
@@ -42,14 +40,8 @@ public class AppSharedPreferences {
         return sharedPreference.getString(imgUrl,null);
     }
 
-    public  void setNotificationImgUrl(String notificationImgUrl)
-    {
-        editor.putString(this.notificationImgUrl,notificationImgUrl);
-        editor.apply();
-    }
-    public String getNotificationImgUrl() {
-        return sharedPreference.getString(notificationImgUrl,null);
-    }
+
+
 
     public  void setStatus(String status)
     {
@@ -62,22 +54,5 @@ public class AppSharedPreferences {
 
 
 
-    public void setFollowersCount(String followersCount){
-        editor.putString(this.followersCount,followersCount);
-        editor.apply();
-    }
 
-    public String getFollowersCount(){
-        return sharedPreference.getString(followersCount,null);
-    }
-
-
-    public void setFollowingsCount(String followingsCount){
-        editor.putString(this.followingsCount,followingsCount);
-        editor.apply();
-    }
-
-    public String getFollowingsCount(){
-        return sharedPreference.getString(followingsCount,null);
-    }
 }

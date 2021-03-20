@@ -112,14 +112,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
             }
 
 
-//            @Override
-//            public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-//                ZoomInImageViewAttacher mIvAttacter = new ZoomInImageViewAttacher();
-//                mIvAttacter.attachImageView(holder.postimg);
-//                mIvAttacter.setZoomable(true);
-//                return false;
-//            }
-
             @Override
             public boolean onDoubleTap(MotionEvent e) {
                 AnimatorSet animatorSet = new AnimatorSet();
@@ -142,7 +134,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                         super.onAnimationEnd(animation);
                     }
                 });
-
 
                 if (drawable instanceof AnimatedVectorDrawableCompat)
                 {
@@ -203,17 +194,15 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                         holder.whiteheart.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-
                                 AnimatorSet animatorSet = new AnimatorSet();
-                                holder.redheart.setScaleX(0.1f);
-                                holder.whiteheart.setScaleY(0.1f);
-                                ObjectAnimator objectAnimatorY = ObjectAnimator.ofFloat(holder.redheart, "scaleY", 0.1f,1f);
-                                objectAnimatorY.setDuration(300);
+                                holder.redheart.setScaleX(0.3f);
+                                holder.whiteheart.setScaleY(0.3f);
+                                ObjectAnimator objectAnimatorY = ObjectAnimator.ofFloat(holder.redheart, "scaleY", 0.3f,3f);
+                                objectAnimatorY.setDuration(5000);
                                 objectAnimatorY.setInterpolator(DECELERATE_INTERPOLATOR);
-                                ObjectAnimator objectAnimatorX = ObjectAnimator.ofFloat(holder.redheart, "scaleX", 0.1f,1f);
-                                objectAnimatorX.setDuration(300);
+                                ObjectAnimator objectAnimatorX = ObjectAnimator.ofFloat(holder.redheart, "scaleX", 0.3f,3f);
+                                objectAnimatorX.setDuration(5000);
                                 objectAnimatorX.setInterpolator(DECELERATE_INTERPOLATOR);
-
                                 holder.redheart.setVisibility(View.VISIBLE);
                                 holder.whiteheart.setVisibility(View.GONE);
                                 animatorSet.playTogether(objectAnimatorY,objectAnimatorX);
@@ -222,14 +211,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                                     @Override
                                     public void onAnimationEnd(Animator animation) {
                                         nrLikes(postkey,userkey,publisherId,model.getUsername(),model.getImgurl(),model.getPostimg(),appSharedPreferences);
-
                                         super.onAnimationEnd(animation);
                                     }
                                 });
-
-//                            mheart.toggleLike();
-//                            isLikedbyCurrentuser[0] = false;
-
                             }
                         });
                     }
@@ -250,7 +234,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                     holder.redheart.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-
                             holder.redheart.setVisibility(View.GONE);
                             holder.whiteheart.setVisibility(View.VISIBLE);
                             removeLikes(postkey,userkey);
@@ -263,17 +246,15 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                     holder.whiteheart.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-
                             AnimatorSet animatorSet = new AnimatorSet();
-                            holder.redheart.setScaleX(0.1f);
-                            holder.whiteheart.setScaleY(0.1f);
-                            ObjectAnimator objectAnimatorY = ObjectAnimator.ofFloat(holder.redheart, "scaleY", 0.1f,1f);
-                            objectAnimatorY.setDuration(300);
+                            holder.redheart.setScaleX(0.3f);
+                            holder.whiteheart.setScaleY(0.3f);
+                            ObjectAnimator objectAnimatorY = ObjectAnimator.ofFloat(holder.redheart, "scaleY", 0.3f,3f);
+                            objectAnimatorY.setDuration(5000);
                             objectAnimatorY.setInterpolator(DECELERATE_INTERPOLATOR);
-                            ObjectAnimator objectAnimatorX = ObjectAnimator.ofFloat(holder.redheart, "scaleX", 0.1f,1f);
-                            objectAnimatorX.setDuration(300);
+                            ObjectAnimator objectAnimatorX = ObjectAnimator.ofFloat(holder.redheart, "scaleX", 0.3f,3f);
+                            objectAnimatorX.setDuration(5000);
                             objectAnimatorX.setInterpolator(DECELERATE_INTERPOLATOR);
-
                             holder.redheart.setVisibility(View.VISIBLE);
                             holder.whiteheart.setVisibility(View.GONE);
                             animatorSet.playTogether(objectAnimatorY,objectAnimatorX);
@@ -282,14 +263,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
                                     nrLikes(postkey,userkey,publisherId,model.getUsername(),model.getImgurl(),model.getPostimg(),appSharedPreferences);
-
                                     super.onAnimationEnd(animation);
                                 }
                             });
-
-//                            mheart.toggleLike();
-//                            isLikedbyCurrentuser[0] = false;
-
                         }
                     });
                 }
@@ -418,10 +394,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
     
     private void nrLikes(String postkey,String userkey,String publisherId,String username,String img,String postimg, AppSharedPreferences appSharedPreferences)
     {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("AllPosts").child(postkey).child("Likes");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("AllPosts").child(postkey).child("Info");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
         Date date = new Date();
         Map<String, Object> map = new HashMap();
@@ -433,7 +409,23 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         databaseReference.child(user.getUid()).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                sentByRest(publisherId,appSharedPreferences.getUserName());
+                ref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snap) {
+
+                            if (!snap.child("publisherid").getValue(String.class).equals(user.getUid()))
+                            {
+                                sentByRest(publisherId,appSharedPreferences.getUserName());
+                            }
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
             }
         });

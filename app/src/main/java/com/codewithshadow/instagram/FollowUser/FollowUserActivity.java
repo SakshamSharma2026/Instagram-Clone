@@ -68,8 +68,7 @@ public class FollowUserActivity extends AppCompatActivity {
     HighlightAdapter storyAdapter;
     List<StoryModel> storyModelList;
     List<PostModel> list;
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference collectionReference;
+    ImageView backbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +104,13 @@ public class FollowUserActivity extends AppCompatActivity {
         Glide.with(getApplicationContext()).load(stringimgurl).into(profileimg);
         fullname.setText(stringfullname);
         username.setText(stringusername);
+        backbtn = findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
         mDblistener = reference.child("Users").child(stringuseid).addValueEventListener(new ValueEventListener() {

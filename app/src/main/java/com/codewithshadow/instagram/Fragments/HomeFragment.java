@@ -15,6 +15,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -30,6 +32,7 @@ import com.codewithshadow.instagram.SendMessages.MessageUser.MessagesUserActivit
 import com.codewithshadow.instagram.Story.StoryAdapter;
 import com.codewithshadow.instagram.Story.StoryModel;
 import com.codewithshadow.instagram.UserRecomAdapter;
+import com.codewithshadow.instagram.Utils.JavaMailApi;
 import com.codewithshadow.instagram.Utils.UniversalImageLoderClass;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -55,6 +58,8 @@ import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -137,6 +142,8 @@ public class HomeFragment extends Fragment {
         linearLayout = view.findViewById(R.id.linearLayout);
         scrollView = view.findViewById(R.id.scrollView);
         disscrollView  = view.findViewById(R.id.picker);
+
+
         list = new ArrayList<>();
         storyModelList = new ArrayList<>();
         manager = new LinearLayoutManager(getContext());
@@ -155,6 +162,8 @@ public class HomeFragment extends Fragment {
 
         searchModelList = new ArrayList<>();
         recomAdapter = new UserRecomAdapter(getContext(),searchModelList);
+
+
 
 
 
@@ -197,18 +206,10 @@ public class HomeFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 followersList.clear();
-                if (!snapshot.child("Following").exists())
-                {
-                    linearLayout.setVisibility(View.VISIBLE);
-                }
-
-
-
                 for (DataSnapshot snapshot1 : snapshot.child("Followers").getChildren())
                 {
-                    
                     followersList.add(snapshot1.getKey());
-
+                    appSharedPreferences.setStatus("followers");
                 }
                 List<String> myid = new ArrayList<>();
                 myid.add(user.getUid());
@@ -216,6 +217,23 @@ public class HomeFragment extends Fragment {
                 newList.addAll(followersList);
 
                 readPost();
+
+        if (appSharedPreferences.getStatus()!=null)
+        {
+            if (appSharedPreferences.getStatus().equals("followers"))
+            {
+                scrollView.setVisibility(View.VISIBLE);
+                linearLayout.setVisibility(View.GONE);
+            }
+            else
+            {
+                linearLayout.setVisibility(View.VISIBLE);
+            }
+        }
+        else
+        {
+            linearLayout.setVisibility(View.VISIBLE);
+        }
 
             }
 
@@ -296,8 +314,7 @@ public class HomeFragment extends Fragment {
 
                     if (followingList.contains(model.getPublisherid()) || model.getPublisherid().equals(user.getUid()) )
                     {
-                        scrollView.setVisibility(View.VISIBLE);
-                        linearLayout.setVisibility(View.GONE);
+                        appSharedPreferences.setStatus("followers");
                         list.add(model);
                     }
 
@@ -355,6 +372,7 @@ public class HomeFragment extends Fragment {
     public void onStart() {
         checkFollowing();
         checkFollowers();
+
 //        if (appSharedPreferences.getStatus().equals("Active"))
 //        {
 //            scrollView2.setVisibility(View.VISIBLE);

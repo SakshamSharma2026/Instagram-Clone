@@ -64,7 +64,6 @@ public class NotificationFragment extends Fragment {
     NotificationFragCommentAdapter notificationFragCommentAdapter;
     private List<String> commentList;
     private List<String> requestList;
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
     ValueEventListener dbListener;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -193,18 +192,6 @@ public class NotificationFragment extends Fragment {
     private void requestList()
     {
         requestList = new ArrayList<>();
-//        CollectionReference collectionReference = db.collection("Users").document(user.getUid()).collection("Request");
-//        collectionReference.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-//            @Override
-//            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-//                requestList.clear();
-//                for(DocumentSnapshot documentSnapshot : queryDocumentSnapshots)
-//                {
-//                    requestList.add(documentSnapshot.getId());
-//                }
-//                checkRequest();
-//            }
-//        });
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
         databaseReference.child("Users").child(user.getUid()).child("Request").addValueEventListener(new ValueEventListener() {
             @Override
@@ -256,31 +243,6 @@ public class NotificationFragment extends Fragment {
                 }
             });
         }
-//        CollectionReference collectionReference = db.collection("Users");
-//        for(String requestid : requestList)
-//        {
-//            requestModelList.clear();
-
-//            collectionReference.document(requestid).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//                @Override
-//                public void onSuccess(DocumentSnapshot dataSnapshot) {
-//                    String username = dataSnapshot.getString("username");
-//                    String name = dataSnapshot.getString("name");
-//                    String imgurl = dataSnapshot.getString("imgurl");
-//                    String receiver = dataSnapshot.getString("username");
-//                    String sender = dataSnapshot.getId();
-//                    RequestModel requestModel = new RequestModel(sender,receiver,username,name,imgurl);
-//                    requestModelList.add(requestModel);
-//                    scrollView.setVisibility(View.VISIBLE);
-//                    relativeLayout.setVisibility(View.GONE);
-//                    requestAdapter = new RequestAdapter(getActivity(),requestModelList);
-//                    followNotificationRecycler.setAdapter(requestAdapter);
-//                    requestAdapter.notifyDataSetChanged();
-//                }
-//            });
-//        }
-
-
     }
 
 
@@ -307,7 +269,7 @@ public class NotificationFragment extends Fragment {
                 }
                 adapter = new NotificationAdapter(getActivity(),list);
                 recyclerView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+               adapter.notifyDataSetChanged();
             }
 
             @Override

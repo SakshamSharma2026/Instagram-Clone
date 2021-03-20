@@ -102,7 +102,7 @@
                     android:ellipsize="end"
                     android:maxLines="2"
                     android:textColor="#131313"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
             </RelativeLayout>
 

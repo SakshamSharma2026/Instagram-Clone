@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -88,7 +89,6 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
-        init();
 
         //----------------------------------RunTime Permissions----------------------------------//
         Dexter.withContext(this)
@@ -100,6 +100,8 @@ public class PostActivity extends AppCompatActivity {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
                         //Normal Functionl if user allow permission
+                        init();
+
                     }
 
                     @Override
@@ -130,10 +132,6 @@ public class PostActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
 
 
     }

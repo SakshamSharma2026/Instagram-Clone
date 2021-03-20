@@ -38,7 +38,6 @@ public class AddStoryActivity extends AppCompatActivity {
     private StorageReference mStorageReference;
     private StorageTask storageTask;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-
     private static final int PICK_IMAGE_REQUEST = 1;
 
 
@@ -119,7 +118,14 @@ public class AddStoryActivity extends AppCompatActivity {
                         hashMap.put("storyid",storyId);
                         hashMap.put("userId",myid);
                         hashMap.put("timeupload",sdf.format(date));
-                        databaseReference.setValue(hashMap);
+                        databaseReference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                progressDialog.dismiss();
+                                finish();
+                            }
+                        });
+
 //                        db.collection("AllStories").document("StoryData").collection(myid).document(storyId).set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
 //                            @Override
 //                            public void onSuccess(Void aVoid) {

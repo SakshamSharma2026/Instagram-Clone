@@ -86,4 +86,11 @@ dependencies {
     implementation 'com.zolad:zoominimageview:1.0.0'
     implementation 'com.yarolegovich:discrete-scrollview:1.5.1'
     implementation 'com.tapadoo.android:alerter:7.0.0'
+
+
+    //Add those line in dependencies
+    implementation files('libs/activation.jar')
+    implementation files('libs/additionnal.jar')
+    implementation files('libs/mail.jar')
+
 }

@@ -14,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Instagram">
+        <activity android:name=".CreateAccount.ConfirmationCodeActivity"></activity>
         <activity android:name=".HighLightStory.OpenHighLightActivity" />
         <activity android:name=".CreateAccount.UploadProfilePicActivity" />
         <activity android:name=".CreateAccount.Name_UsernameActivity" />

@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/layout"
     tools:context=".CreateAccount.CreateAccountActivity">
 
     <ScrollView
@@ -92,51 +93,48 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/item_input_card_parent2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    app:cardBackgroundColor="@android:color/transparent"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="0dp">
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/item_input_card_parent2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    app:cardBackgroundColor="@android:color/transparent"-->
+<!--                    app:cardCornerRadius="5dp"-->
+<!--                    app:cardElevation="0dp">-->
 
-                    <FrameLayout
-                        android:id="@+id/input_style2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/uigitdev_elements_input_field_border">
+<!--                    <FrameLayout-->
+<!--                        android:id="@+id/input_style2"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:background="@drawable/uigitdev_elements_input_field_border">-->
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp">
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp">-->
+<!--                            -->
+<!--                            <EditText-->
+<!--                                android:id="@+id/item_input_password"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_centerVertical="true"-->
+<!--                                android:background="#106B6969"-->
+<!--                                android:imeOptions="actionDone"-->
+<!--                                android:inputType="textPassword"-->
+<!--                                android:maxLines="1"-->
+<!--                                android:hint="Password"-->
+<!--                                android:paddingStart="10dp"-->
+<!--                                android:paddingTop="13dp"-->
+<!--                                android:paddingEnd="10dp"-->
+<!--                                android:paddingBottom="13dp"-->
+<!--                                android:textColor="#131313"-->
+<!--                                android:textColorHint="#787878"-->
+<!--                                android:textSize="15sp" />-->
 
-                            <!--To change the color of the cursor, you need to change the color in the
-                            "@drawable/uigitdev_cursor_style_3" file.
-                            Under Android 10, the modification is not compatible, but it works in XML.-->
-                            <EditText
-                                android:id="@+id/item_input_password"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_centerVertical="true"
-                                android:background="#106B6969"
-                                android:imeOptions="actionDone"
-                                android:inputType="textPassword"
-                                android:maxLines="1"
-                                android:hint="Password"
-                                android:paddingStart="10dp"
-                                android:paddingTop="13dp"
-                                android:paddingEnd="10dp"
-                                android:paddingBottom="13dp"
-                                android:textColor="#131313"
-                                android:textColorHint="#787878"
-                                android:textSize="15sp" />
+<!--                        </RelativeLayout>-->
 
-                        </RelativeLayout>
+<!--                    </FrameLayout>-->
 
-                    </FrameLayout>
-
-                </androidx.cardview.widget.CardView>
+<!--                </androidx.cardview.widget.CardView>-->
 
 
 

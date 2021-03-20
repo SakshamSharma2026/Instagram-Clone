@@ -30,7 +30,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:id="@+id/close"
+                    android:id="@+id/backbtn"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ic_baseline_keyboard_backspace_24"
                     />
@@ -45,7 +45,7 @@
                     android:fontFamily="@font/bold"
                     android:layout_centerVertical="true"
                     android:textColor="@color/black"
-                    android:layout_toEndOf="@id/close"
+                    android:layout_toEndOf="@id/backbtn"
                     />
 
             </RelativeLayout>

@@ -211,7 +211,6 @@ public class SendMessageAdapter extends RecyclerView.Adapter<SendMessageAdapter.
         TextView text_seen;
         CardView card_img;
         ImageView msg_img;
-        RelativeLayout rrll;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

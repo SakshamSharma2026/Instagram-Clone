@@ -234,30 +234,6 @@ public class SendMessageActivity extends AppCompatActivity {
 
     private void Read_Message(String myid,String userid,String imageurl)
     {
-//        collectionReference = db.collection("Chats");
-//        collectionReference.addSnapshotListener(new EventListener<QuerySnapshot>() {
-//            @Override
-//            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-//                if (error!=null)
-//                {
-//                    return;
-//                }
-//
-//                list.clear();
-//                SendMessageModel model = null;
-//                for(DocumentSnapshot snapshot : value)
-//                {
-//                    model = snapshot.toObject(SendMessageModel.class);
-//                    if (model.getReceiver().equals(myid) && model.getSender().equals(userid) || model.getReceiver().equals(userid) && model.getSender().equals(myid))
-//                    {
-//                        list.add(model);
-//                    }
-//                }
-//                adapter = new SendMessageAdapter(SendMessageActivity.this,list,imageurl);
-//                recyclerView.setAdapter(adapter);
-//                adapter.notifyDataSetChanged();
-//            }
-//        });
         ref.child("Chats").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

@@ -125,19 +125,12 @@ public class FinalPostActivity extends AppCompatActivity {
                                     Date date = new Date();
                                     Map<String, Object> map = new HashMap<>();
                                     map.put(key,"true");
-//                                    db.collection("Users").document(user.getUid()).collection("Posts").document(key).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                        @Override
-//                                        public void onSuccess(Void aVoid) {
-//
-//                                        }
-//                                    });
 
-
-//                                    ref.child(user.getUid()).child("Posts").child(key).setValue(true).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                        @Override
-//                                        public void onSuccess(Void aVoid) {
-//                                        }
-//                                    });
+                                    ref.child(user.getUid()).child("Posts").child(key).setValue(true).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                        }
+                                    });
 
                                     Map<String, Object> map2 = new HashMap<>();
                                     map2.put("postimg",imageUrl);
@@ -148,15 +141,6 @@ public class FinalPostActivity extends AppCompatActivity {
                                     map2.put("postkey",key);
                                     map2.put("publisherid",user.getUid());
                                     map2.put("time",sdf.format(date));
-//
-//                                    db.collection("AllPosts").document(key).set(map2).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                        @Override
-//                                        public void onSuccess(Void aVoid) {
-//                                            Intent intent = new Intent(FinalPostActivity.this, Dashboard.class);
-//                                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//makesure user cant go back
-//                                            startActivity(intent);
-//                                        }
-//                                    });
 
                                     alluserref.child(key).child("Info").setValue(map2).addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override

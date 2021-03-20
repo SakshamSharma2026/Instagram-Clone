@@ -132,11 +132,9 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             String text2 = username +  " liked your photo . " + "\n" + convTime;
             SpannableString ss2 = new SpannableString(text2);
             StyleSpan styleSpan2 = new StyleSpan(Typeface.BOLD);
-            AbsoluteSizeSpan word_size = new AbsoluteSizeSpan(14,true);
+//            AbsoluteSizeSpan word_size = new AbsoluteSizeSpan(14,true);
 
-            ForegroundColorSpan fcsRed2 = new ForegroundColorSpan(Color.BLACK);
             ss2.setSpan(styleSpan2, 0, username.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            ss2.setSpan(word_size, 0, username.length(),  Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             usernameTextView.setText(ss2);
 
 
