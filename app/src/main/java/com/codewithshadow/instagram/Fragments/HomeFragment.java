@@ -1,42 +1,30 @@
 package com.codewithshadow.instagram.Fragments;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
-import com.codewithshadow.instagram.AppSharedPreferences;
+import com.codewithshadow.instagram.Utils.AppSharedPreferences;
 import com.codewithshadow.instagram.LoginPage.UserModel;
 import com.codewithshadow.instagram.PostImages.PostAdapter;
 import com.codewithshadow.instagram.PostImages.PostModel;
 import com.codewithshadow.instagram.R;
-import com.codewithshadow.instagram.SearchActivity.SearchAdapter;
-import com.codewithshadow.instagram.SearchActivity.SearchModel;
 import com.codewithshadow.instagram.SendMessages.MessageUser.MessagesUserActivity;
 import com.codewithshadow.instagram.Story.StoryAdapter;
 import com.codewithshadow.instagram.Story.StoryModel;
 import com.codewithshadow.instagram.UserRecomAdapter;
-import com.codewithshadow.instagram.Utils.JavaMailApi;
 import com.codewithshadow.instagram.Utils.UniversalImageLoderClass;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -44,13 +32,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.yarolegovich.discretescrollview.DiscreteScrollView;
 import com.yarolegovich.discretescrollview.transform.Pivot;
@@ -58,8 +39,6 @@ import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.UUID;
 
 /**
  * A simple {@link Fragment} subclass.

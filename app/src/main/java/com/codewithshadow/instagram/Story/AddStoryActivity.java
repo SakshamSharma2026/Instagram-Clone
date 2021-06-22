@@ -38,7 +38,6 @@ public class AddStoryActivity extends AppCompatActivity {
     private StorageReference mStorageReference;
     private StorageTask storageTask;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private static final int PICK_IMAGE_REQUEST = 1;
 
 
 

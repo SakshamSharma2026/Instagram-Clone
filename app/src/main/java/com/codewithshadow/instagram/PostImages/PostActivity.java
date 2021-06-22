@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,7 +18,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.codewithshadow.instagram.GridImageAdapter;
+import com.codewithshadow.instagram.Utils.GridImageAdapter;
 import com.codewithshadow.instagram.R;
 import com.codewithshadow.instagram.Utils.FilePath;
 import com.codewithshadow.instagram.Utils.FileSearch;
@@ -43,8 +41,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
-import com.theartofdev.edmodo.cropper.CropImageView.CropShape;
 
 import java.util.ArrayList;
 import java.util.List;

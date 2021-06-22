@@ -2,8 +2,6 @@ package com.codewithshadow.instagram.HighLightStory;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.codewithshadow.instagram.AppSharedPreferences;
+import com.codewithshadow.instagram.Utils.AppSharedPreferences;
 import com.codewithshadow.instagram.R;
-import com.codewithshadow.instagram.Story.StoryActivity;
 import com.codewithshadow.instagram.Story.StoryModel;
 import com.codewithshadow.instagram.Utils.UniversalImageLoderClass;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.List;
 

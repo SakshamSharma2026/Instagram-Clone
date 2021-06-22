@@ -2,24 +2,18 @@ package com.codewithshadow.instagram.SendMessages.MessageUser;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.codewithshadow.instagram.AppSharedPreferences;
-import com.codewithshadow.instagram.FollowUser.FollowUserActivity;
-import com.codewithshadow.instagram.LoginPage.UserModel;
 import com.codewithshadow.instagram.R;
 import com.codewithshadow.instagram.SendMessages.SendMessageActivity;
 import com.codewithshadow.instagram.SendMessages.SendMessageModel;

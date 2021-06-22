@@ -1,39 +1,29 @@
 package com.codewithshadow.instagram.SendMessages;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.codewithshadow.instagram.AppSharedPreferences;
-import com.codewithshadow.instagram.CreateAccount.UploadProfilePicActivity;
-import com.codewithshadow.instagram.Dashboard;
+import com.codewithshadow.instagram.Utils.AppSharedPreferences;
 import com.codewithshadow.instagram.R;
 import com.codewithshadow.instagram.SendNotification.NotiModel.NotificationReq;
 import com.codewithshadow.instagram.SendNotification.NotiModel.NotificationResponce;
 import com.codewithshadow.instagram.SendNotification.NotificationRequest;
 import com.codewithshadow.instagram.SendNotification.RetrofitClient;
-import com.codewithshadow.instagram.Utils.ImageResizer;
 import com.codewithshadow.instagram.Utils.LoadingDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -41,19 +31,13 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -208,13 +192,7 @@ public class SendMessageActivity extends AppCompatActivity {
         map.put("type","text");
         map.put("isseen",false);
         map.put("receiver",stringuserid);
-//        db.collection("Chats").document(key).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
-//            @Override
-//            public void onComplete(@NonNull Task<Void> task) {
-//                sentByRest(stringuserid,stringusername,t1);
-//
-//            }
-//        });
+
         ref.child("Chats").child(key).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -222,14 +200,6 @@ public class SendMessageActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void status(String status)
-    {
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("status",status);
-        ref.child("Users").child(user.getUid()).child("Info").updateChildren(map);
-    }
-
 
 
     private void Read_Message(String myid,String userid,String imageurl)
@@ -272,9 +242,6 @@ public class SendMessageActivity extends AppCompatActivity {
                                 new NotificationReq.Notification(appSharedPreferences.getUserName(),
                                         appSharedPreferences.getUserName() + ": " + msg));
 
-
-
-
                         RetrofitClient.getRetrofit(BASE_URL)
                                 .create(NotificationRequest.class)
                                 .sent(req)
@@ -309,10 +276,6 @@ public class SendMessageActivity extends AppCompatActivity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null ) {
             mImageUri = data.getData();
             uploadFile();
-//            CropImage.activity(mImageUri)
-//                    .setAspectRatio(4,5)
-////                    .setGuidelines(CropImageView.Guidelines.ON)
-//                    .start(this);
         }
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
@@ -340,8 +303,6 @@ public class SendMessageActivity extends AppCompatActivity {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG,100,byteArrayOutputStream);
             byte[] data = byteArrayOutputStream.toByteArray();
-
-
 
             final StorageReference reference = mStorageRef.child("ChatImages/"+ user.getUid() +"post_"+System.currentTimeMillis() );
 

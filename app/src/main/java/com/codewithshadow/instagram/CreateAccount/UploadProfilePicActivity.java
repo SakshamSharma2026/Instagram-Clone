@@ -42,7 +42,6 @@ import java.util.Map;
 
 public class UploadProfilePicActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
-    Uri resultUri;
     private Uri mImageUri;
     private StorageReference mStorageRef;
     FirebaseAuth auth;
@@ -54,7 +53,6 @@ public class UploadProfilePicActivity extends AppCompatActivity {
     TextView text;
     String finalimageUrl;
     LoadingDialog loadingDialog;
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
 
@@ -154,22 +152,6 @@ public class UploadProfilePicActivity extends AppCompatActivity {
                                                 map.put("imgurl",imageUrl);
                                                 map.put("userid",user.getUid());
                                                 map.put("token", token);
-//                                                map.put("status",true);
-//                                                db.collection("Users").document(auth.getUid()).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                                    @Override
-//                                                    public void onSuccess(Void aVoid) {
-//                                                        loadingDialog.dismissDialog();
-//                                                        Intent intent = new Intent(UploadProfilePicActivity.this, Dashboard.class);
-//                                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//makesure user cant go back
-//                                                        startActivity(intent);
-//                                                    }
-//                                                }).addOnFailureListener(new OnFailureListener() {
-//                                                    @Override
-//                                                    public void onFailure(@NonNull Exception e) {
-//                                                        loadingDialog.dismissDialog();
-//                                                        Toast.makeText(UploadProfilePicActivity.this,"Error !",Toast.LENGTH_SHORT).show();
-//                                                    }
-//                                                });
                                                 ref.child(auth.getUid()).child("Info").setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {

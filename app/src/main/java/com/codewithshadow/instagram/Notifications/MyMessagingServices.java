@@ -25,6 +25,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
+@SuppressLint("MissingFirebaseInstanceTokenRefresh")
 public class MyMessagingServices extends FirebaseMessagingService {
     Bitmap bitmap;
     @Override

@@ -1,4 +1,4 @@
-package com.codewithshadow.instagram;
+package com.codewithshadow.instagram.Utils;
 
 import android.content.Context;
 import android.content.Context;
@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.codewithshadow.instagram.R;
 import com.codewithshadow.instagram.Utils.SquareImageView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;

@@ -1,12 +1,10 @@
-package com.codewithshadow.instagram;
+package com.codewithshadow.instagram.Utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 public class AppSharedPreferences {
     private SharedPreferences sharedPreference;
-
-    private static final String flag="logout";
 
     private  SharedPreferences.Editor editor;
 

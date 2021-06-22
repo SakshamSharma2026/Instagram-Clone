@@ -1,7 +1,6 @@
 package com.codewithshadow.instagram.SendMessages;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.GestureDetector;
@@ -11,17 +10,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
-import com.codewithshadow.instagram.AppSharedPreferences;
 import com.codewithshadow.instagram.R;
 import com.codewithshadow.instagram.Utils.UniversalImageLoderClass;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -112,8 +107,6 @@ public class SendMessageAdapter extends RecyclerView.Adapter<SendMessageAdapter.
             UniversalImageLoderClass.setImage(model.getMsg_img(),holder.msg_img,null);
             holder.show_message.setVisibility(View.GONE);
             holder.text_seen.setVisibility(View.GONE);
-
-
         }
 
 
@@ -183,7 +176,7 @@ public class SendMessageAdapter extends RecyclerView.Adapter<SendMessageAdapter.
         }
         );
 
-        holder.itemView.setOnTouchListener(new View.OnTouchListener() {
+        holder.card_img.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 return gestureDetector.onTouchEvent(motionEvent);

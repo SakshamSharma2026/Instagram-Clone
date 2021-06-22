@@ -11,14 +11,13 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.codewithshadow.instagram.AppSharedPreferences;
+import com.codewithshadow.instagram.Utils.AppSharedPreferences;
 import com.codewithshadow.instagram.R;
 import com.codewithshadow.instagram.Utils.UniversalImageLoderClass;
 import com.google.android.gms.tasks.OnCompleteListener;

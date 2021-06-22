@@ -1,12 +1,10 @@
 package com.codewithshadow.instagram.NotificationFragmentData;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.AbsoluteSizeSpan;
-import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,10 +17,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.codewithshadow.instagram.AppSharedPreferences;
+import com.codewithshadow.instagram.Utils.AppSharedPreferences;
 import com.codewithshadow.instagram.CommentActivity.CommentModel;
 import com.codewithshadow.instagram.R;
-import com.codewithshadow.instagram.Story.StoryAdapter;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
